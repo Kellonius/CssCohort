@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Example2Component} from '../example-2/example-2.component'
 
 @Component({
   selector: 'app-example-3',
