@@ -6,3 +6,62 @@
   background: -ms-linear-gradient(top,  $color1 0%,$color2 99%,$color2 100%); /* IE10+ */
   background: linear-gradient(to bottom,  $color1 0%,$color2 99%,$color2 100%); /* W3C */
 }
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin no-spacing() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex() {
+  display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  flex-flow: row wrap;
+}
+
+@mixin flex-row-wrap() {
+  @include flex();
+  flex-flow: row wrap;
+}
+
+@mixin padding($values...) {
+  @each $var in $values {
+    padding: #{$var};
+  }
+}
+
+@mixin filter() {
+  -webkit-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0); /* IE6-9 */
+}
+
+@mixin size($height: 100%, $width: 100%) {
+  height: $height;
+  width: $width;
+}
+
+@mixin small() {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media only screen and (min-width: 321px) and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media only screen and (min-width: 1080px) {
+    @content;
+  }
+}

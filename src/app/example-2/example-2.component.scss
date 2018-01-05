@@ -4,24 +4,28 @@ html, body {
 	height:100%;
 	background:#000;
 	padding-top:10px;
+  //@include padding(10px);
 }
 
 ul#flex-container {
 	list-style-type:none;
 	margin:0;padding:0;
+  //@include no-spacing();
 	display:flex;
+  //@include flex;
 	flex-wrap:wrap;
 }
 
 ul li {
 	flex-grow:1;
 	width:250px;
-	padding-top:45px;
+  //padding-top:45px;  This property is overwritten and therefore unnecessary
 	color:#fff;
 	font-weight:bold;
 	font-size:2.2em;
 	text-align:center;
 	margin:0;padding:0;
+  //@include no-spacing();
 	position:relative;
 }
 
@@ -45,6 +49,7 @@ ul li:after {
 	left:0; top:0;
 	width:100%;
 	height:100%;
+  //@include size();
 	display:inline-block;
 	cursor:pointer;
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 99%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
@@ -55,14 +60,16 @@ ul li:after {
 	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.65) 100%); /* W3C */
   //@include background-gradient(rgba(0,0,0,0), rgba(0,0,0,0.65));
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  //@include filter();
 }
 
 .magnify {
 	background:url(/assets/images/magnify.png) no-repeat;
 	position:absolute;
 	z-index:5;
-	width:54px;
 	height:55px;
+  width: 54px;
+  //@include size(55px, 54px);
 	opacity:0;
 	margin-left:auto;
 	margin-right:auto;

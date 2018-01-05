@@ -1,3 +1,5 @@
+@import "../../assets/scss/Mixins";
+
 html, body {
 	height:100vh;
 	background:#1c1c1c;
@@ -10,10 +12,12 @@ a:hover {
 
 header {
 	display:flex;
+  flex-flow: row wrap;
+  //@include flex-row-wrap;
+  justify-content: space-around;
 	background:#000;
 	padding-top:18px;
-	justify-content:space-around;
-	flex-flow: row wrap;
+  //@include padding(18px);
 }
 
 .child {
@@ -24,8 +28,10 @@ ul {
 	list-style-type:none;
 	display:flex;
 	flex-flow: row wrap;
-	width:400px;
+  //@include flex-row-wrap;
+  width: 400px;
 	margin:0;padding:0;
+  //@include no-spacing();
 }
 
 ul li {
@@ -53,10 +59,12 @@ header div:nth-child(1) img {
 #search {
 	background:#3a3a3a url(/assets/images/magnify2.png) no-repeat 5px 5px;
 	border-radius:10px;
+  //@include border-radius(10px);
 	border:none;
 	outline:none;
 	color:#fff;
 	padding: 4px 4px 4px 25px;
+  //@include padding(4px, 4px, 4px, 10px);
 	display:none;
 }
 
@@ -71,6 +79,7 @@ h1, p {
 
 .container {
 	padding:80px;
+  //@include padding(80px);
 }
 
 @media all and (max-width:800px) {
