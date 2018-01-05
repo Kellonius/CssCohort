@@ -4,7 +4,7 @@ import { Example2Component} from '../example-2/example-2.component'
 @Component({
   selector: 'app-example-3',
   templateUrl: './example-3.component.html',
-  styleUrls: ['./example-3.component.css']
+  styleUrls: ['./example-3.component.scss']
 })
 export class Example3Component implements OnInit {
 
