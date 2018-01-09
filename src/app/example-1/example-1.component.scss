@@ -6,10 +6,14 @@ html, body {
 
 ul#flex-container {
     list-style-type: none;  /*removes bullets */
-  margin: 0;
-  padding: 0; /*removes any inherent padding or margins*/
+    margin: 0;
+    padding: 0; /*removes any inherent padding or margins*/
   //@include no-spacing();
     /*display: flex;*/
+    /*flex-direction: row-reverse;*/
+    /*flex-wrap: nowrap;*/
+    /*justify-content: space-between;*/
+    /*align-items:flex-end;*/
   //@include flex();
 }
 
@@ -23,11 +27,11 @@ ul li {
     text-align:center;
 }
 
-ul li:first-child { background: #c2d775 }
+ul li:first-child { background: #c2d775; /*order: 2*/ }
 ul li:nth-child(2) { background: #007278; /*flex-grow: 2;*/ }
 ul li:nth-child(3) { background: #c7b600 }
 ul li:nth-child(4) { background: #a90077; /* flex-grow: 5;*/ }
-ul li:nth-child(5) { background: #00a378 }
+ul li:nth-child(5) { background: #00a378; /*align-self: flex-end;*/ }
 ul li:last-child { background: #00ea72 }
 
 //@include small {
