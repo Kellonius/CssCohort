@@ -14,11 +14,6 @@
   border-radius: $radius;
 }
 
-@mixin no-spacing() {
-  margin: 0;
-  padding: 0;
-}
-
 @mixin flex() {
   display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
   display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -31,10 +26,9 @@
   flex-flow: row wrap;
 }
 
-@mixin padding($values...) {
-  @each $var in $values {
-    padding: #{$var};
-  }
+@mixin no-spacing() {
+  margin: 0;
+  padding: 0;
 }
 
 @mixin filter() {
@@ -42,9 +36,16 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0); /* IE6-9 */
 }
 
+
 @mixin size($height: 100%, $width: 100%) {
   height: $height;
   width: $width;
+}
+
+@mixin padding($values...) {
+  @each $var in $values {
+    padding: #{$var};
+  }
 }
 
 @mixin small() {
